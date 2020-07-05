@@ -69,9 +69,10 @@ body{
     transition: 0.5s;
 }
 .page-logo{
-    color: white;
+    color: #fff;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 35px;
+    font-weight: bold;
     text-transform: uppercase;
     text-decoration: none ;
     display: flex;
@@ -87,7 +88,7 @@ span{
     font-weight: 900;
 }
 .page-logo_img{
-    margin: 6px;
+    margin-right: 6px;
 }
 .page-menu{
     height: 100%;
@@ -103,14 +104,12 @@ span{
     height: 100%;
 }
 .page-menu_list-link{
-    color: white;
+    color: #fff;
     text-transform: uppercase;
     padding: 0 40px;
     text-decoration: none;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bold;
-
-
     height: 100%;
     display: flex;
     align-items: center;
@@ -134,7 +133,7 @@ span{
     padding-top: 90px;
     padding-left: 15px;
     padding-right: 15px;
-    text-align: center;
+
 }
 .main-banner:before{
     content: "";
@@ -150,12 +149,13 @@ span{
 
 
 .main-banner_title{
-    color: white;
+    color: #fff;
     font-size: 90px;
     font-family: 'Nunito Sans', sans-serif;
     text-transform: uppercase;
     z-index: 1;
     margin: 0;
+    text-align: center;
 }
 .main-banner_text{
     z-index: 1;
@@ -174,7 +174,7 @@ span{
     height: 80px;
     border-radius: 40px;
     display: inline-flex;
-    border: none;
+    border: 0;
     background: red;
     align-items: center;
     justify-content: center;
@@ -182,12 +182,12 @@ span{
     text-transform: uppercase;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bold;
-    margin: 0 8px;
+    margin: 8px;
     transition: 0.3s;
 }
 .main-banner_button:hover{
     opacity: 0.8;
-    box-shadow: 0 2px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 .main-banner_button1{
     background: var(--c-main);
@@ -227,10 +227,11 @@ span{
     align-items: center;
 
 }
+.section-title--light{
+    color: #fff;
+}
 .section-title:before,
-.section-title:after,
-.section-title_service:after,
-.section-title_service:before{
+.section-title:after {
     content: "";
     width: 50px;
     height: 3px;
@@ -258,14 +259,13 @@ span{
 .main-blog_box-link {
     border-radius: 40px;
     display: inline-flex;
-    border: none;
+    border: 0;
     background: red;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     text-transform: uppercase;
     font-family: 'Nunito Sans', sans-serif;
-    font-weight: bold;
     color: #fff;
     padding: 11px 30px;
     transition: 0.3s;
@@ -279,20 +279,6 @@ span{
 .main-service{
     background: var(--c-black);
 }
-.section-title_service{
-    font-size: 35px;
-    font-family: 'Nunito Sans', sans-serif;
-    text-transform: uppercase;
-    color: #fff;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.container{}
-.main-service_container{}
-.row{}
 .main-service_box{
     text-align: center;
 
@@ -301,39 +287,44 @@ span{
     max-width: 170px;
 }
 .main-service_box-title{
-    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 19px;
+    color: #fff;
+    font-weight: normal;
+    text-transform: uppercase;
 }
 .main-service_box-text{
-    font-family: 'Nunito Sans', sans-serif;
+    color: #b2b2b2;
     font-size: 14px;
-    color: #6A6A6A;
     font-weight: 300;
 
 }
 .main-service_box-link {
     border-radius: 40px;
     display: inline-flex;
-    border: none;
+    border: 0;
     background: red;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     text-transform: uppercase;
     font-family: 'Nunito Sans', sans-serif;
-    font-weight: bold;
     color: #fff;
-    padding: 11px 22px;
+    padding: 11px 30px;
     transition: 0.3s;
 }
 
-.main-contact{}
-.main-contact_container{}
 .form{
     padding-left: 50%;
     background-image: url("../images/form_photo.png");
+    background-repeat: no-repeat;
+    background-size: calc(50% - 16px);
 }
 .form-row{
     margin-bottom: 20px;
+}
+.form-row--last{
+    text-align: right;
 }
 
 .form-control{
@@ -344,7 +335,11 @@ span{
     padding: 0 10px;
     border-radius: 8px;
     color: #b2b2b2;
-
+}
+.form-control:focus,
+.form-checkbox_input:focus{
+    outline: none;
+    border-color:var(--c-main)
 }
 
 .form-textarea{
@@ -354,6 +349,12 @@ span{
 }
 
 .form-checkbox{
+    display: flex;
+
+}
+.form-checkbox_input{
+    margin-right: 8px;
+    flex-shrink: 0;
     width: 22px;
     height: 22px;
     border-radius: 8px;
@@ -361,47 +362,53 @@ span{
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-
+}
+.form-checkbox_input:checked{
+    background: url("../images/icon_check.svg");
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.form-checkbox-label{
+.form-checkbox_label{
     color: #b2b2b2;
     font-size: 13px;
-    font-family: 'Open Sans', sans-serif;
+
 
 }
 
 .form-button{
     border-radius: 40px;
     display: inline-flex;
-
     background: #fff;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     text-transform: uppercase;
     font-family: 'Nunito Sans', sans-serif;
-    font-weight: bold;
     color: var(--c-main);
-    padding: 11px 22px;
-    transition: 0.3s;
+    font-weight: bold;
     border: 2px solid var(--c-main);
+    padding: 11px 30px;
+    transition: 0.3s;
     cursor: pointer;
+    width: 140px;
+    height: 40px;
+    font-weight: bold;
     box-shadow: 0 3px 6px rgba(255,0,0,0.3);
 }
-
-
 
 .page-footer{
     background: var(--c-black);
     padding: 40px 0;
 }
-.container{}
+
 .page-footer_container{}
+
 .page-footer_logo{
-    color: white;
+    color: #fff;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 25px;
+    font-weight: bold;
     text-transform: uppercase;
     text-decoration: none ;
     display: flex;
@@ -409,9 +416,15 @@ span{
     margin-bottom: 30px;
 }
 .page-footer_logo {
-    font-weight: 900;
     color: #fff;
-
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 .page-footer-logo_img{
@@ -435,7 +448,6 @@ span{
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
     max-width: 500px;
 }
 .page-footer-menu_list-el{
@@ -446,7 +458,7 @@ span{
     font-family: 'Nunito Sans', sans-serif;
     font-size: 14px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     display: inline-flex;
     padding: 5px 0;
     text-transform: uppercase;
@@ -461,7 +473,9 @@ span{
 
 
 }
-.page-footer-menu_list-link-first{
+.page-footer-menu_list-link:hover{
     color: var(--c-main);
 }
 
+.section-title_service:after,
+.section-title_service:before
